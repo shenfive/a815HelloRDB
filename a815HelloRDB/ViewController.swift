@@ -31,8 +31,8 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "goListPage":
-            let nextVC = segue.destination as! Page2ViewController
-            nextVC.nickName = nickNameTF.text ?? ""
+            let nextVC = segue.destination as? Page2ViewController
+            nextVC?.nickName = nickNameTF.text ?? ""
         default:
             break
         }
