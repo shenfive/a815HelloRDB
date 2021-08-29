@@ -19,20 +19,21 @@ class ViewController: UIViewController {
         Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user{
                 print("SingIned")
+                self.statusLabel.text = "己登入"
                 print(user.uid)
             }else{
+                self.statusLabel.text = "己登出"
                 print("SignOut")
             }
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-   
-        
-    }
 
     @IBAction func goNextPage(_ sender: Any) {
+        let nickName = nickNameTF.text ?? ""
+        if nickName.count < 2{
+            self.showMsg(msg: "暱稱至少兩碼")
+        }
     }
     
 }
