@@ -10,13 +10,10 @@ import Firebase
 
 class ViewController: UIViewController {
 
-    var dbRef:DatabaseReference!
-    
-    
+    @IBOutlet weak var nickNameTF: UITextField!
+    @IBOutlet weak var statusLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dbRef = Database.database().reference()
         
         Auth.auth().signInAnonymously(completion: nil)
         Auth.auth().addStateDidChangeListener { auth, user in
@@ -31,12 +28,12 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let theRef = dbRef.child("appdefult").child("myFirstWrite")
-        theRef.setValue("Hello Data")
-
+   
         
     }
 
-
+    @IBAction func goNextPage(_ sender: Any) {
+    }
+    
 }
 
