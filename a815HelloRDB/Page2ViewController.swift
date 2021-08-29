@@ -24,7 +24,17 @@ class Page2ViewController: UIViewController {
         
         let ref = Database.database().reference().child("forum")
         ref.observeSingleEvent(of: .value) { snapshot in
-            print(snapshot)
+     
+            for item in snapshot.children{
+
+                if let itemSnapshot = item as? DataSnapshot{
+                    let theSubject = itemSnapshot.childSnapshot(forPath: "subject").value as! String
+                    print(theSubject)
+                }
+                
+            }
+            
+            
         }
         
     }
