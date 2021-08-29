@@ -10,6 +10,20 @@ import Firebase
 
 class Page2ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "goPage3":
+            let nextVC = segue.destination as? Page3ViewController
+            nextVC?.nickName = self.nickName
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "goPage3", sender: self)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return subject.count
@@ -43,7 +57,7 @@ class Page2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         
         let ref = Database.database().reference().child("forum")
-        ref.observeSingleEvent(of: .value) { snapshot in
+        ref.observe( .value) { snapshot in
             self.keys.removeAll()
             self.subject.removeAll()
             for item in snapshot.children{
