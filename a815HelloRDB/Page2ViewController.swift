@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class Page2ViewController: UIViewController {
 
@@ -18,5 +19,14 @@ class Page2ViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let ref = Database.database().reference().child("forum")
+        ref.observeSingleEvent(of: .value) { snapshot in
+            print(snapshot)
+        }
+        
+    }
 
 }
