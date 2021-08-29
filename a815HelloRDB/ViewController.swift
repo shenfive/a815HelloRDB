@@ -31,11 +31,9 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let verRef = dbRef.child("appdefult").child("currentVer")
-        
-        verRef.observeSingleEvent(of: .value) { snapshot in
-            print("ver: \(snapshot.value as! String)")
-        }
+        let theRef = dbRef.child("appdefult").child("myFirstWrite")
+        theRef.setValue("Hello Data")
+
         
     }
 
