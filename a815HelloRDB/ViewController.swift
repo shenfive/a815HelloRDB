@@ -28,12 +28,33 @@ class ViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "goListPage":
+            let nextVC = segue.destination as! Page2ViewController
+            nextVC.nickName = nickNameTF.text ?? ""
+        default:
+            break
+        }
+    }
+    
 
     @IBAction func goNextPage(_ sender: Any) {
         let nickName = nickNameTF.text ?? ""
         if nickName.count < 2{
             self.showMsg(msg: "暱稱至少兩碼")
+            return
         }
+        
+        
+        if let user = Auth.auth().currentUser {
+            self.performSegue(withIdentifier: "goListPage", sender: self)
+        }else{
+            self.showMsg(msg: "尚未登入")
+        }
+        
+        
+        
     }
     
 }
