@@ -33,7 +33,7 @@ class Page2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         theTableView.dataSource = self
         theTableView.delegate = self
         
-        
+        self.title = "討論區例表"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,7 +53,7 @@ class Page2ViewController: UIViewController, UITableViewDataSource, UITableViewD
                     self.subject.append(theSubject)
                     let key = itemSnapshot.key
                     self.keys.append(key)
-                } 
+                }
             }
             self.theTableView.reloadData()
             
