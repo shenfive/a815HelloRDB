@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		BA1EF36D26DB68A300B332DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1EF36C26DB68A300B332DE /* Assets.xcassets */; };
 		BA1EF37026DB68A300B332DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1EF36E26DB68A300B332DE /* LaunchScreen.storyboard */; };
 		BA1EF37826DB68E300B332DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA1EF37726DB68E300B332DE /* GoogleService-Info.plist */; };
+		BA1EF37A26DB79D800B332DE /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1EF37926DB79D800B332DE /* Tools.swift */; };
 		E18A75CB3885F11D59E6D983 /* Pods_a815HelloRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57766B86B67012BB0236583E /* Pods_a815HelloRDB.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		BA1EF36F26DB68A300B332DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA1EF37126DB68A300B332DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA1EF37726DB68E300B332DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA1EF37926DB79D800B332DE /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		E63483D383F46EF5E5F226E5 /* Pods-a815HelloRDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-a815HelloRDB.release.xcconfig"; path = "Target Support Files/Pods-a815HelloRDB/Pods-a815HelloRDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,13 +60,13 @@
 				3AE5AFB91880A8D641D0E293 /* Pods-a815HelloRDB.debug.xcconfig */,
 				E63483D383F46EF5E5F226E5 /* Pods-a815HelloRDB.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		BA1EF35726DB68A200B332DE = {
 			isa = PBXGroup;
 			children = (
+				BA1EF37926DB79D800B332DE /* Tools.swift */,
 				BA1EF36226DB68A200B332DE /* a815HelloRDB */,
 				BA1EF36126DB68A200B332DE /* Products */,
 				9CF46A22224484A3A47B4E05 /* Pods */,
@@ -213,6 +215,7 @@
 				BA1EF36826DB68A200B332DE /* ViewController.swift in Sources */,
 				BA1EF36426DB68A200B332DE /* AppDelegate.swift in Sources */,
 				BA1EF36626DB68A200B332DE /* SceneDelegate.swift in Sources */,
+				BA1EF37A26DB79D800B332DE /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
