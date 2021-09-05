@@ -15,6 +15,9 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var key = ""
     var subJect = ""
     var dbReference:DatabaseReference!
+    var commentArray:[[String:String]] = []
+    
+    
 
     @IBOutlet weak var theTableView: UITableView!
     @IBOutlet weak var inputTextTF: UITextField!
@@ -32,18 +35,32 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         dbReference.observe(.value) { snapshot in
             print("newData")
             
+            self.commentArray.removeAll()
+            
             for item in snapshot.children{
                 if let itemSnapshot = item as? DataSnapshot{
-                    let comment = itemSnapshot.childSnapshot(forPath: "comment").value as! String
-                    let nickname = itemSnapshot.childSnapshot(forPath: "user").value as! String
-                    let time:Double = itemSnapshot.childSnapshot(forPath: "t").value as! Double / 1000
+                    let comment = itemSnapshot.childSnapshot(forPath: "comment").value as? String ?? "不清楚"
+                    let nickname = itemSnapshot.childSnapshot(forPath: "user").value as? String ?? "不知道"
+                    let time:Double = (itemSnapshot.childSnapshot(forPath: "t").value as? Double ?? 0) / 1000
+                    
+                    let commentDate = Date(timeIntervalSince1970: time)
                     
                     
-//                    print(comment)
-                    print("==============")
-                    print("\(comment)\n\(nickname)\n\(time)")
-                }
+                    let dateFomater = DateFormatter()
+                    dateFomater.dateFormat = "yyyy-MM-dd HH:mm"
+                    let dateString = dateFomater.string(from: commentDate)
                 
+                    let commentContent = ["comment":comment,
+                                          "user":nickname,
+                                          "t":dateString]
+                    
+                    self.commentArray.append(commentContent)
+                    
+                    
+                    print("==============")
+                    print("\(comment)\n\(nickname)\n\(dateString)")
+                }
+                self.theTableView.reloadData()
                 
                 
                 
@@ -79,13 +96,18 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return commentArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentTableViewCell") as! CommentTableViewCell
         
-        cell.backgroundColor = UIColor.yellow
+//        cell.backgroundColor = UIColor.yellow
+        cell.comment.text = commentArray[indexPath.row]["comment"]
+        cell.nickname.text = commentArray[indexPath.row]["user"]
+        cell.date.text = commentArray[indexPath.row]["t"]
+        
+        
         return cell
     }
     
