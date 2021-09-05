@@ -29,6 +29,10 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         theTableView.delegate = self
         theTableView.dataSource = self
         
+        dbReference.observe(.value) { snapshot in
+            print("newData")
+        }
+        
     }
     
     
