@@ -31,6 +31,28 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         dbReference.observe(.value) { snapshot in
             print("newData")
+            
+            for item in snapshot.children{
+                if let itemSnapshot = item as? DataSnapshot{
+                    let comment = itemSnapshot.childSnapshot(forPath: "comment").value as! String
+                    let nickname = itemSnapshot.childSnapshot(forPath: "user").value as! String
+                    let time:Double = itemSnapshot.childSnapshot(forPath: "t").value as! Double / 1000
+                    
+                    
+//                    print(comment)
+                    print("==============")
+                    print("\(comment)\n\(nickname)\n\(time)")
+                }
+                
+                
+                
+                
+                
+            }
+            
+            
+            
+            
         }
         
     }
@@ -46,7 +68,7 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let commentRef = dbReference.childByAutoId()
         
-        let commentContent = ["commnet":comment,
+        let commentContent = ["comment":comment,
                               "user":nickName,
                               "t":ServerValue.timestamp()] as [String : Any]
         
