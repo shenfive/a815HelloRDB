@@ -17,6 +17,7 @@
 		BA1EF37A26DB79D800B332DE /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1EF37926DB79D800B332DE /* Tools.swift */; };
 		BA1EF37C26DB7CE600B332DE /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1EF37B26DB7CE600B332DE /* Page2ViewController.swift */; };
 		BA1EF37E26DB894C00B332DE /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1EF37D26DB894C00B332DE /* Page3ViewController.swift */; };
+		BA9FD59526E462FE0012DA54 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9FD59426E462FE0012DA54 /* CommentTableViewCell.swift */; };
 		E18A75CB3885F11D59E6D983 /* Pods_a815HelloRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57766B86B67012BB0236583E /* Pods_a815HelloRDB.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		BA1EF37926DB79D800B332DE /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		BA1EF37B26DB7CE600B332DE /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
 		BA1EF37D26DB894C00B332DE /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
+		BA9FD59426E462FE0012DA54 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		E63483D383F46EF5E5F226E5 /* Pods-a815HelloRDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-a815HelloRDB.release.xcconfig"; path = "Target Support Files/Pods-a815HelloRDB/Pods-a815HelloRDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				BA1EF37126DB68A300B332DE /* Info.plist */,
 				BA1EF37B26DB7CE600B332DE /* Page2ViewController.swift */,
 				BA1EF37D26DB894C00B332DE /* Page3ViewController.swift */,
+				BA9FD59426E462FE0012DA54 /* CommentTableViewCell.swift */,
 			);
 			path = a815HelloRDB;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				BA1EF37E26DB894C00B332DE /* Page3ViewController.swift in Sources */,
 				BA1EF36826DB68A200B332DE /* ViewController.swift in Sources */,
 				BA1EF36426DB68A200B332DE /* AppDelegate.swift in Sources */,
+				BA9FD59526E462FE0012DA54 /* CommentTableViewCell.swift in Sources */,
 				BA1EF36626DB68A200B332DE /* SceneDelegate.swift in Sources */,
 				BA1EF37A26DB79D800B332DE /* Tools.swift in Sources */,
 			);

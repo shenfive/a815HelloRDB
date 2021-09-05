@@ -8,13 +8,15 @@
 import UIKit
 import Firebase
 
-class Page3ViewController: UIViewController {
+class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     
     var nickName = ""
     var key = ""
     var subJect = ""
     var dbReference:DatabaseReference!
 
+    @IBOutlet weak var theTableView: UITableView!
     @IBOutlet weak var inputTextTF: UITextField!
 
 
@@ -24,7 +26,8 @@ class Page3ViewController: UIViewController {
         self.title = subJect
         
         dbReference = Database.database().reference().child("comment").child(key)
-        
+        theTableView.delegate = self
+        theTableView.dataSource = self
         
     }
     
@@ -46,6 +49,18 @@ class Page3ViewController: UIViewController {
         commentRef.setValue(commentContent)
         inputTextTF.text = ""
         
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentTableViewCell") as! CommentTableViewCell
+        
+        cell.backgroundColor = UIColor.yellow
+        return cell
     }
     
     
