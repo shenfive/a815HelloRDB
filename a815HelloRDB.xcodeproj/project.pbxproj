@@ -18,6 +18,7 @@
 		BA1EF37E26DB894C00B332DE /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1EF37D26DB894C00B332DE /* Page3ViewController.swift */; };
 		BA9FD59526E462FE0012DA54 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9FD59426E462FE0012DA54 /* CommentTableViewCell.swift */; };
 		BA9FD59626E494A70012DA54 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1EF37926DB79D800B332DE /* Tools.swift */; };
+		BA9FD59926E49B920012DA54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA9FD59B26E49B920012DA54 /* Localizable.strings */; };
 		E18A75CB3885F11D59E6D983 /* Pods_a815HelloRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57766B86B67012BB0236583E /* Pods_a815HelloRDB.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,8 @@
 		BA1EF37B26DB7CE600B332DE /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
 		BA1EF37D26DB894C00B332DE /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
 		BA9FD59426E462FE0012DA54 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		BA9FD59A26E49B920012DA54 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BA9FD59C26E49BFC0012DA54 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E63483D383F46EF5E5F226E5 /* Pods-a815HelloRDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-a815HelloRDB.release.xcconfig"; path = "Target Support Files/Pods-a815HelloRDB/Pods-a815HelloRDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +105,7 @@
 				BA1EF37B26DB7CE600B332DE /* Page2ViewController.swift */,
 				BA1EF37D26DB894C00B332DE /* Page3ViewController.swift */,
 				BA9FD59426E462FE0012DA54 /* CommentTableViewCell.swift */,
+				BA9FD59B26E49B920012DA54 /* Localizable.strings */,
 			);
 			path = a815HelloRDB;
 			sourceTree = "<group>";
@@ -149,6 +153,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = BA1EF35726DB68A200B332DE;
 			productRefGroup = BA1EF36126DB68A200B332DE /* Products */;
@@ -165,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9FD59926E49B920012DA54 /* Localizable.strings in Resources */,
 				BA1EF37026DB68A300B332DE /* LaunchScreen.storyboard in Resources */,
 				BA1EF37826DB68E300B332DE /* GoogleService-Info.plist in Resources */,
 				BA1EF36D26DB68A300B332DE /* Assets.xcassets in Resources */,
@@ -250,6 +256,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		BA9FD59B26E49B920012DA54 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA9FD59A26E49B920012DA54 /* en */,
+				BA9FD59C26E49BFC0012DA54 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -257,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -318,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

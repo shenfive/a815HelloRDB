@@ -42,7 +42,8 @@ class ViewController: UIViewController {
     @IBAction func goNextPage(_ sender: Any) {
         let nickName = nickNameTF.text ?? ""
         if nickName.count < 2{
-            self.showMsg(msg: "暱稱至少兩碼",title: "這是一個提示")
+            let msg = NSLocalizedString("nickname.hint", comment: "")
+            self.showMsg(msg: msg,title: "這是一個提示")
             return
         }
         
