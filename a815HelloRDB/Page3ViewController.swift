@@ -62,9 +62,14 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     print("\(comment)\n\(nickname)\n\(dateString)")
                 }
 
-                self.commentArray.sort { itemA, itemB in
-                    return itemA["theTime"] as? Double ?? 0 > itemB["theTime"] as? Double ?? 0
+                self.commentArray.sort{
+                    $0["theTime"] as! Double > $1["theTime"] as! Double
                 }
+                
+                
+//                { itemA, itemB in
+//                    return itemA["theTime"] as? Double ?? 0 > itemB["theTime"] as? Double ?? 0
+//                }
                 
                 self.theTableView.reloadData()
                 
