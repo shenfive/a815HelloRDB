@@ -44,3 +44,9 @@ extension UIViewController{
     
     
 }
+extension String{
+    func localize() -> String{
+        return NSLocalizedString(self, comment: "")
+    }
+}
+

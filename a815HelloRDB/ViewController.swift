@@ -42,8 +42,8 @@ class ViewController: UIViewController {
     @IBAction func goNextPage(_ sender: Any) {
         let nickName = nickNameTF.text ?? ""
         if nickName.count < 2{
-            let msg = NSLocalizedString("nickname.hint", comment: "")
-            self.showMsg(msg: msg,title: "這是一個提示")
+//            let msg = NSLocalizedString("nickname.hint", comment: "")
+            self.showMsg(msg: "nickname.hint".localize(),title: "這是一個提示")
             return
         }
         
