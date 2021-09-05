@@ -12,5 +12,26 @@ extension UIViewController{
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "我知道了", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
-    }  
+    }
+    
+    
+    func showIndicator(){
+        let bgView = UIView(frame: self.view.bounds)
+        bgView.backgroundColor = UIColor.black
+        bgView.alpha = 0.5
+        let idicatorView = UIActivityIndicatorView(style: .large)
+        idicatorView.color = UIColor.white
+        idicatorView.center = self.view.center
+        idicatorView.startAnimating()
+        bgView.addSubview(idicatorView)
+        self.view.addSubview(bgView)
+    
+        
+//        UIActivityIndicatorView
+    }
+    
+    
+    
+    
+    
 }

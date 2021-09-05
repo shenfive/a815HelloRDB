@@ -60,9 +60,11 @@ class Page2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.title = "討論區例表"
     }
     
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        self.showIndicator()
         
         
         
