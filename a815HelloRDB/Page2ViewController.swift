@@ -10,17 +10,29 @@ import Firebase
 
 class Page2ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var nickName = ""
+    var keys:[String] = []
+    var subject:[String] = []
+    
+    var selectedId:Int? = nil
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "goPage3":
             let nextVC = segue.destination as? Page3ViewController
             nextVC?.nickName = self.nickName
+            nextVC?.key = keys[selectedId!]
+            nextVC?.subJect = subject[selectedId!]
+            
+            
+            
         default:
             break
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedId = indexPath.row
         self.performSegue(withIdentifier: "goPage3", sender: self)
     }
     
@@ -36,9 +48,7 @@ class Page2ViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
 
-    var nickName = ""
-    var keys:[String] = []
-    var subject:[String] = []
+
     
     @IBOutlet weak var theTableView: UITableView!
     override func viewDidLoad() {
