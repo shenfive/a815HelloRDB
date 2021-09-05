@@ -19,6 +19,8 @@ extension UIViewController{
         let bgView = UIView(frame: self.view.bounds)
         bgView.backgroundColor = UIColor.black
         bgView.alpha = 0.5
+        bgView.accessibilityIdentifier = "TheIndeView"
+        
         let idicatorView = UIActivityIndicatorView(style: .large)
         idicatorView.color = UIColor.white
         idicatorView.center = self.view.center
@@ -26,10 +28,17 @@ extension UIViewController{
         bgView.addSubview(idicatorView)
         self.view.addSubview(bgView)
     
-        
-//        UIActivityIndicatorView
     }
     
+    func removeIndicator(){
+        for theView in self.view.subviews{
+            if theView.accessibilityIdentifier == "TheIndeView"{
+                theView.removeFromSuperview()
+            }
+        }
+        
+        
+    }
     
     
     

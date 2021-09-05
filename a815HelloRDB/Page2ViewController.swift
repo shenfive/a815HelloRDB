@@ -70,6 +70,7 @@ class Page2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let ref = Database.database().reference().child("forum")
         ref.observe( .value) { snapshot in
+            self.removeIndicator()
             self.keys.removeAll()
             self.subject.removeAll()
             for item in snapshot.children{
