@@ -15,7 +15,7 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var key = ""
     var subJect = ""
     var dbReference:DatabaseReference!
-    var commentArray:[[String:String]] = []
+    var commentArray:[[String:Any]] = []
     
     
 
@@ -52,7 +52,8 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                     let commentContent = ["comment":comment,
                                           "user":nickname,
-                                          "t":dateString]
+                                          "t":dateString,
+                                          "theTime":time] as [String : Any]
                     
                     self.commentArray.append(commentContent)
                     
@@ -60,6 +61,11 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     print("==============")
                     print("\(comment)\n\(nickname)\n\(dateString)")
                 }
+
+                self.commentArray.sort { itemA, itemB in
+                    return itemA["theTime"] as? Double ?? 0 > itemB["theTime"] as? Double ?? 0
+                }
+                
                 self.theTableView.reloadData()
                 
                 
@@ -103,9 +109,9 @@ class Page3ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentTableViewCell") as! CommentTableViewCell
         
 //        cell.backgroundColor = UIColor.yellow
-        cell.comment.text = commentArray[indexPath.row]["comment"]
-        cell.nickname.text = commentArray[indexPath.row]["user"]
-        cell.date.text = commentArray[indexPath.row]["t"]
+        cell.comment.text = commentArray[indexPath.row]["comment"] as! String
+        cell.nickname.text = commentArray[indexPath.row]["user"] as! String
+        cell.date.text = commentArray[indexPath.row]["t"] as! String
         
         
         return cell
